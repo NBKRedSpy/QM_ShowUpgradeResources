@@ -32,12 +32,14 @@ namespace QM_ShowUpgradeResources
 
         public bool GetRequiresItem(string id)
         {
-            return NeededItems.ContainsKey(id);
+
+            return string.IsNullOrEmpty(id) ? false : NeededItems.ContainsKey(id);
         }
 
         public bool GetRequiresItem(string id, out int count)
         {
-            return NeededItems.TryGetValue(id, out count);
+            count = 0;
+            return string.IsNullOrEmpty(id) ? false :  NeededItems.TryGetValue(id, out count);
         }
 
         /// <summary>
