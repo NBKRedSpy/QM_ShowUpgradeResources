@@ -1,0 +1,7 @@
+{
+  "UniqueModName": "NBKRedSpy_QM_ShowUpgradeResources",
+  "Assemblies": [
+    "QM_ShowUpgradeResources.dll"
+  ],
+  "Dependencies": []
+}
