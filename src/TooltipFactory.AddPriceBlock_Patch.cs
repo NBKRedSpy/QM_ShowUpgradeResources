@@ -13,7 +13,10 @@ namespace QM_ShowUpgradeResources
     {
         public static void Postfix(TooltipFactory __instance, string itemId)
         {
-            if (!Plugin.NeededResourceData.GetRequiresItem(itemId, out int count)) return;
+            if (!Plugin.NeededResourceData.UnpurchasedUpgradesRequiresItem(itemId, out int count))
+            {
+                return;
+            }
 
             int inventoryCount = ItemInteractionSystem.Count(__instance._state.Get<Mercenaries>(), __instance.MagnumCargo, itemId);
 

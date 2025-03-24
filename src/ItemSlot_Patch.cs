@@ -24,20 +24,8 @@ namespace PrototypeMod
             }
 
             component.ItemId = id;
-            component.Refresh();
-
-            //ResourceCount resourceCount = __instance.gameObject.GetComponent<ResourceCount>();
-            //if (resourceCount == null)
-            //{
-            //    resourceCount = __instance.gameObject.AddComponent<ResourceCount>();
-            //}
-
-            //resourceCount.ItemId = id;
-
-            //resourceCount.Refresh();
-
+            component.Refresh(Plugin.State.Get<DungeonGameMode>() != null);
         }
-
     }
 
 

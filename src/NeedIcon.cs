@@ -17,25 +17,41 @@ namespace QM_ShowUpgradeResources
 
         public string ItemId { get; set; }
 
-        private bool NeedsItem { get; set; }
+        private bool NeedsResource { get; set; }
 
         public GameObject ImageContainer { get; set; }
 
-        public void Refresh()
+        /// <summary>
+        /// Updates the icon status.
+        /// </summary>
+        /// <param name="isInRaid">If in raid, only includes that resources that are in the ship,
+        /// Not the merc in the current raid</param>
+        public void Refresh(bool isInRaid)
         {
-            NeedsItem = Plugin.NeededResourceData.GetRequiresItem(ItemId);
-            ImageContainer.SetActive(NeedsItem);
+            //When in raid, only use the inventory in the ship to determine if the resource upgrade amount
+            //  is satisfied.  The purpose is prevent the user from choosing to drop an item because they thought
+            //  they had enough inventory.  The tooltip is what handles the actual amount including inventory.
+            if (isInRaid)
+            {
+                NeedsResource = Plugin.NeededResourceData.RequiresItemAfterShipInventory(ItemId);
+            }
+            else
+            {
+                NeedsResource = Plugin.NeededResourceData.UnpurchasedUpgradesRequiresItem(ItemId, out _);
+            }
+
+            ImageContainer.SetActive(NeedsResource);
+
+        }
+
+        static NeedIcon()
+        {
+            string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            Utils.LoadSprite(Path.Combine(assemblyPath, "Up-Arrow-64.png"), out NeedsIcon);
         }
 
         public NeedIcon()
         {
-            if(NeedsIcon == null)
-            {
-                
-                string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                Utils.LoadSprite(Path.Combine(assemblyPath, "Up-Arrow-64.png"), out NeedsIcon);
-            }
-
             RectTransform slotRect = transform.parent.GetComponent<RectTransform>();
 
             transform.SetParent(slotRect);
