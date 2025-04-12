@@ -1,12 +1,6 @@
 [h1]Quasimorph Show Needed Upgrade Resources[/h1]
 
 
-[h2]Important! Opt In Beta Only[/h2]
-
-Unfortunately this mod is only available for the Quasimorph's opt in beta, not the current release.
-
-[h1]Docs[/h1]
-
 Ever been in the dungeon and trying to remember if a resource is still needed for Magnum upgrades?
 
 This mod simplifies the process by adding a green arrow to any resource items that are still needed for Magnum upgrades.
