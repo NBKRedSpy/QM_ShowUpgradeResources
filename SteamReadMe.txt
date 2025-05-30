@@ -1,5 +1,11 @@
-[h1]Quasimorph Show Needed Upgrade Resources[/h1]
+[h1]Quasimorph Show Needed Upgrade Resources - BETA ONLY[/h1]
 
+
+[h1]Beta Only[/h1]
+
+This is only for the opt in beta.  For the normal version, look for the mod of the same name without "beta" in the name.
+
+[h1]Docs[/h1]
 
 Ever been in the dungeon and trying to remember if a resource is still needed for Magnum upgrades?
 
@@ -21,6 +27,11 @@ Thanks!
 Source code is available on GitHub at https://github.com/NBKRedSpy/QM_ShowUpgradeResources
 
 [h1]Change Log[/h1]
+
+[h2]1.0.2.1[/h2]
+[list]
+[*]Compatibility for version 0.9.1.384 +
+[/list]
 
 [h2]1.0.2[/h2]
 [list]

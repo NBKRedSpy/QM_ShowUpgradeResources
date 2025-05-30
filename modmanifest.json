@@ -1,7 +1,11 @@
 {
-  "UniqueModName": "NBKRedSpy_QM_ShowUpgradeResources",
+  "UniqueModName": "NBKRedSpy_QM_ShowUpgradeResources_beta",
   "Assemblies": [
     "QM_ShowUpgradeResources.dll"
   ],
-  "Dependencies": []
+  "Dependencies": [],
+    "SteamTags": [
+    "0.9.1",
+    "Quality of Life"
+  ]
 }
