@@ -1,11 +1,6 @@
-# Quasimorph Show Needed Upgrade Resources - BETA ONLY
+# Quasimorph Show Needed Upgrade Resources
 
 ![thumbnail icon](media/thumbnail.png)
-
-# Beta Only
-This is only for the opt in beta.  For the normal version, look for the mod of the same name without "beta" in the name.
-
-# Docs
 
 Ever been in the dungeon and trying to remember if a resource is still needed for Magnum upgrades?
 
