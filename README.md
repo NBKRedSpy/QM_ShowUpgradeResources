@@ -2,12 +2,16 @@
 
 ![thumbnail icon](media/thumbnail.png)
 
+
 Ever been in the dungeon and trying to remember if a resource is still needed for Magnum upgrades?
 
-This mod simplifies the process by adding a green arrow to any resource items that are still needed for Magnum upgrades.
-The tooltip for the item also includes a "Needs X:" line which indicates how many of that resource is still needed.
+The game already contains a X/Y in the tool tip which indicates how much of an item is still needed for magnum upgrades.
+However, this mod adds a green arrow on the actual item so the needed items can be identified at a glance.
 
-When in a raid, the green arrow will show for resources that need an upgrade *and* there is not enough already in the ship's cargo.
+It also changes the X/Y to "Needs X/Y" to clarify what the value means.
+
+# Arrow Display Logic
+When in a raid, the green arrow will displayed for resources that need an upgrade *and* there is not enough already in the ship's cargo.
 This does not change when an item is picked up.
 
 When on the space ship, the green arrow will always show if a future upgrade needs the resource.
