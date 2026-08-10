@@ -4,6 +4,7 @@
 Ever been in the dungeon and trying to remember if a resource is still needed for Magnum upgrades?
 
 The game already contains a X/Y in the tool tip which indicates how much of an item is still needed for magnum upgrades.
+
 However, this mod adds a green arrow on the actual item so the needed items can be identified at a glance.
 
 It also changes the X/Y to "Needs X/Y" to clarify what the value means.
