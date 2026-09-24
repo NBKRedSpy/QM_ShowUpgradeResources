@@ -1,13 +1,39 @@
 [h1]Quasimorph Show Needed Upgrade Resources[/h1]
 
 
-Ever been in the dungeon and trying to remember if a resource is still needed for Magnum upgrades?
+Ever been in the dungeon and trying to remember if a resource is still needed for Magnum upgrades, but don't want to hover every single item?
 
-The game already contains a X/Y in the tool tip which indicates how much of an item is still needed for magnum upgrades.
+This mod adds a green arrow to the item's icon, and changes the "needed" with more information.
 
-However, this mod adds a green arrow on the actual item so the needed items can be identified at a glance.
+[h1]Formatting:[/h1]
 
-It also changes the X/Y to "Needs X/Y" to clarify what the value means.
+The text format is (Still Needed Amount) Inventory Count / All upgrades needed count
+[table]
+[tr]
+[td]Text
+[/td]
+[td]Notes
+[/td]
+[td]Color
+[/td]
+[/tr]
+[tr]
+[td](-1) 5/6
+[/td]
+[td]Needs one more
+[/td]
+[td]Yellow
+[/td]
+[/tr]
+[tr]
+[td](+4) 10/6
+[/td]
+[td]Has four more than required
+[/td]
+[td]Green
+[/td]
+[/tr]
+[/table]
 
 [h1]Arrow Display Logic[/h1]
 
@@ -24,19 +50,3 @@ Thanks!
 [h1]Source Code[/h1]
 
 Source code is available on GitHub at https://github.com/NBKRedSpy/QM_ShowUpgradeResources
-
-[h1]Change Log[/h1]
-
-[h2]1.0.2.1[/h2]
-[list]
-[*]Compatibility for version 0.9.1.384 +
-[/list]
-
-[h2]1.0.2[/h2]
-[list]
-[*]Changed green icon functionality.
-[list]
-[*]When in raid, doesn't show arrow if there is enough in the Magnum.
-[*]When in ship, always shows the arrow if a future upgrade still needs the resource.
-[/list]
-[/list]

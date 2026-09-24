@@ -28,10 +28,6 @@ namespace QM_ShowUpgradeResources
         {
             NeededItems = GetNeededResources();
             OnDataUpdated?.Invoke(this, new DataUpdateArgs(this));
-
-            //ItemInteractionSystem.Count(_state.Get<Mercenaries>(), MagnumCargo, itemId);
-            //AddItemIconWithQuantity(0, itemId, available, record.UpgradePrice.Count((string s) => s == itemId));
-
         }
 
         /// <summary>
