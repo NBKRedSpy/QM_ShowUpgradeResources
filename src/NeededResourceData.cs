@@ -16,7 +16,7 @@ namespace QM_ShowUpgradeResources
         /// The items that are needed.
         /// Key is the item ID.  The value is the count of items needed.
         /// </summary>
-        private Dictionary<string, ItemCount> NeededItems { get; set; } = new Dictionary<string, ItemCount>();
+        public Dictionary<string, ItemCount> NeededItems { get; set; } = new Dictionary<string, ItemCount>();
 
         public event EventHandler<DataUpdateArgs> OnDataUpdated = null;
 

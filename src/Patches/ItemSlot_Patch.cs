@@ -3,7 +3,7 @@ using MGSC;
 using System;
 using UnityEngine;
 
-namespace QM_ShowUpgradeResources.Patches.MagnumUpgradeScreen
+namespace QM_ShowUpgradeResources.Patches
 {
     [HarmonyPatch(typeof(ItemSlot), nameof(ItemSlot.Initialize))]
     public static class ItemSlot_Patch

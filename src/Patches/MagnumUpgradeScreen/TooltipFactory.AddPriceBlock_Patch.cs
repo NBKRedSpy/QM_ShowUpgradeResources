@@ -21,7 +21,7 @@ namespace QM_ShowUpgradeResources.Patches.MagnumUpgradeScreen
 
             int inventoryCount = ItemInteractionSystem.Count(__instance._state.Get<Mercenaries>(), __instance.MagnumCargo, itemId);
 
-            int surplus =  inventoryCount - neededCount;
+            int surplus = inventoryCount - neededCount;
 
             Color neededColor = surplus < 0 ? Colors.White : Colors.AltGreen;
 
