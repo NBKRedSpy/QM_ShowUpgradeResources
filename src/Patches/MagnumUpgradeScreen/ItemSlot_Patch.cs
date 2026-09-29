@@ -1,10 +1,9 @@
 using HarmonyLib;
 using MGSC;
-using QM_ShowUpgradeResources;
 using System;
 using UnityEngine;
 
-namespace QM_ShowUpgradeResources.Patches
+namespace QM_ShowUpgradeResources.Patches.MagnumUpgradeScreen
 {
     [HarmonyPatch(typeof(ItemSlot), nameof(ItemSlot.Initialize))]
     public static class ItemSlot_Patch

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace QM_ShowUpgradeResources
+namespace QM_ShowUpgradeResources.Patches.MagnumUpgradeScreen
 {
     [HarmonyPatch(typeof(TooltipFactory), nameof(TooltipFactory.AddPriceBlock))]
     public static class Tooltip_SetPriceBlock_Patch

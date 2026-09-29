@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QM_ShowUpgradeResources.Patches
+namespace QM_ShowUpgradeResources.Patches.MagnumUpgradeScreen
 {
     /// <summary>
     /// Change the the Confirmation Window test to include the needed amount for each resource.
