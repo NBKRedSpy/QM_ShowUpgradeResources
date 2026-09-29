@@ -4,7 +4,7 @@ using QM_ShowUpgradeResources;
 using System;
 using UnityEngine;
 
-namespace PrototypeMod
+namespace QM_ShowUpgradeResources.Patches
 {
     [HarmonyPatch(typeof(ItemSlot), nameof(ItemSlot.Initialize))]
     public static class ItemSlot_Patch

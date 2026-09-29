@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using HarmonyLib;
 using MGSC;
 
-namespace QM_ShowUpgradeResources
+namespace QM_ShowUpgradeResources.Patches
 {
     [HarmonyPatch(typeof(MagnumModuleWindow), nameof(MagnumModuleWindow.Hide))]
     public static class MagnumModuleWindow_Hide_Patch
