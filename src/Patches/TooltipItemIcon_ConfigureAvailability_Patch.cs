@@ -14,7 +14,7 @@ namespace QM_ShowUpgradeResources.Patches
     [HarmonyPatch(typeof(TooltipItemIcon), nameof(TooltipItemIcon.ConfigureAvailability))]
     internal class TooltipItemIcon_ConfigureAvailability_Patch
     {
-        public static void Postfix(TooltipItemIcon __instance, int availableAmount, int requiredAmount)
+        public static void Postfix(TooltipItemIcon __instance, int available, int required)
         {
             //Doesn't cost much, and we are here anyway.  
             //  Avoids needing to update the confirm dialog amount when an upgrade is purchased.
@@ -23,7 +23,7 @@ namespace QM_ShowUpgradeResources.Patches
             Plugin.NeededResourceData.GetRequiresItem(TooltipItemIcon_Initialize_Patch.ItemId, false, 
                 out int totalNeededCount);
 
-            int delta = availableAmount - totalNeededCount;
+            int delta = available - totalNeededCount;
 
             if (delta < 0)
             {
