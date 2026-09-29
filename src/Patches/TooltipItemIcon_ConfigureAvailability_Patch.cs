@@ -27,8 +27,8 @@ namespace QM_ShowUpgradeResources.Patches
 
             if (delta < 0)
             {
-                __instance._rightCornerText.text += $" {delta}";
-                Localization.ActualizeFontAndSize(__instance._rightCornerText, TextContext.SmallNumbers);
+                __instance._rightCornerText.SetText($"{required}({available} {delta})");
+                __instance._rightCornerText.fontSize = 6;
             }
 
         }
