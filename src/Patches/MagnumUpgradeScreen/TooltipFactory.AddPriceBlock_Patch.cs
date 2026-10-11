@@ -12,6 +12,11 @@ namespace QM_ShowUpgradeResources.Patches.MagnumUpgradeScreen
     [HarmonyPatch(typeof(TooltipFactory), nameof(TooltipFactory.AddPriceBlock))]
     public static class Tooltip_SetPriceBlock_Patch
     {
+        public static bool Prepare()
+        {
+            return Plugin.Config.ShowTotalNeededResources;
+        }
+
         public static void Postfix(TooltipFactory __instance, string itemId)
         {
             if (!Plugin.NeededResourceData.UnpurchasedUpgradesRequiresItem(itemId, out int neededCount))

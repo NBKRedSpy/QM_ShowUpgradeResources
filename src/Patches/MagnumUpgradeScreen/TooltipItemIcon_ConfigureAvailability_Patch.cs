@@ -16,6 +16,11 @@ namespace QM_ShowUpgradeResources.Patches.MagnumUpgradeScreen
     [HarmonyPatch(typeof(TooltipItemIcon), nameof(TooltipItemIcon.ConfigureAvailability))]
     internal class TooltipItemIcon_ConfigureAvailability_Patch
     {
+        public static bool Prepare()
+        {
+            return Plugin.Config.ShowTotalNeededResources;
+        }
+
         public static void Postfix(TooltipItemIcon __instance, int available, int required)
         {
             //Doesn't cost much, and we are here anyway.  
