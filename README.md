@@ -4,12 +4,18 @@
 
 Ever been in the dungeon and trying to remember if a resource is still needed for Magnum upgrades, but don't want to hover every single item?
 
-This mod adds a green arrow to the item's icon, and changes the "needed" with more information. 
+This mod adds a green arrow to the item's icon, and changes the "needed" to show the delta of the amount needed.
 
 The extra "needed" text shows the delta for the needed resources.  See the [Needed Extra Info](#needed-extra-info) section below.
 
 # Needed Extra Info:
-This shows the +/- delta for a needed resouce.
+This shows the +/- delta for a needed resource. Can be disabled in the config.
+
+![Need Resources](./media/delta-need-resources.png)
+
+![Need Resources](./media/delta-extra-resources.png)
+
+
 This allows the user to quickly see how much of a resource is still needed or the over supply without having to do the math for every item.
 
 For example, when looking at the magnum upgrades to determine if an item should be held onto until a more important upgrade is purchased.
@@ -21,6 +27,7 @@ The text format is (Still Needed Amount) Inventory Count / All upgrades needed c
 |(-1) 5/6|Needs one more|White|
 |(0) 5/5|No surplus|Green|
 |(+3) 9/6|Has four more than required|Green|
+
 
 # Arrow Display Logic
 When in a raid, the green arrow will displayed for resources that need an upgrade *and* there is not enough already in the ship's cargo.
