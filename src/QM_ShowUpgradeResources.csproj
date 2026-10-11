@@ -20,6 +20,10 @@
 		<WorkshopPath>$(GAME_PATH)\..\..\workshop\content\2059170\$(SteamId)\</WorkshopPath>
 		<ManagedPath>$(GAME_PATH)\$(GAME_NAME)_Data\Managed\</ManagedPath>
 	</PropertyGroup>
+
+	<PropertyGroup>
+		<MCM_PATH>$(GAME_PATH)\..\..\workshop\content\2059170\3469678797\MCM.dll</MCM_PATH>
+	</PropertyGroup>
 	<ItemGroup>
 	  <Compile Remove="Move To Root\**" />
 	  <EmbeddedResource Remove="Move To Root\**" />
@@ -27,6 +31,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Reference Include="MCM">
+			<HintPath Condition="Exists($(MCM_PATH))">$(MCM_PATH)</HintPath>
+			<Private>False</Private>
+		</Reference>
 		<Reference Include="0Harmony">
 			<HintPath>$(ManagedPath)0Harmony.dll</HintPath>
 		</Reference>
@@ -61,6 +69,7 @@
 		</Reference>
 	</ItemGroup>
 	<ItemGroup>
+		<PackageReference Include="Newtonsoft.json" Version="13.0.3" ExcludeAssets="runtime;"/>
 		<PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.2">
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>

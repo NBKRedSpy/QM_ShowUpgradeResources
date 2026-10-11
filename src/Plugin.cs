@@ -16,6 +16,9 @@ namespace QM_ShowUpgradeResources
 
         public static ConfigDirectories ConfigDirectories = new ConfigDirectories();
 
+        public static ModConfig Config { get; private set; }
+        internal static McmConfiguration McmConfiguration { get; private set; }
+
         public static Logger Logger = new Logger();
         public static State State { get; private set; }
 
@@ -24,6 +27,18 @@ namespace QM_ShowUpgradeResources
         [Hook(ModHookType.AfterConfigsLoaded)]
         public static void AfterConfig(IModContext context)
         {
+            Directory.CreateDirectory(ConfigDirectories.AllModsConfigFolder);
+            ConfigDirectories = new ConfigDirectories();
+            Directory.CreateDirectory(ConfigDirectories.ModPersistenceFolder);
+
+            Config = new ModConfig(ConfigDirectories.ConfigPath).LoadConfig();
+
+            //Optionally support MCM if the user has MCM installed.  Otherwise the user must edit the config
+            //  file directly as needed.
+            McmConfiguration = new McmConfiguration(Config);
+            McmConfiguration.TryConfigure();
+
+
             State = context.State;
             new Harmony("NBKRedSpy_" + ConfigDirectories.ModAssemblyName).PatchAll();
         }
