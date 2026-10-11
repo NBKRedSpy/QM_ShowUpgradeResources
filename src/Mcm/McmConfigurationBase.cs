@@ -49,39 +49,41 @@ namespace QM_ShowUpgradeResources.Mcm
         /// </summary>
         private static int UniqueId = 0;
 
-        /// <summary>
-        /// Attempts to configure the MCM, but logs an error and continues if it fails.
-        /// </summary>
-        public bool TryConfigure()
-        {
+        //TODO: Remove
 
-            const string missingMcmMessage = "MCM is not available.  MCM will not be used.";
+        ///// <summary>
+        ///// Attempts to configure the MCM, but logs an error and continues if it fails.
+        ///// </summary>
+        //public bool TryConfigure()
+        //{
 
-            try
-            {
-                bool mcmAvailable = AppDomain.CurrentDomain.GetAssemblies()
-                    .FirstOrDefault(a => a.GetName().Name == "MCM") != null;
+        //    const string missingMcmMessage = "MCM is not available.  MCM will not be used.";
 
-                if (!mcmAvailable)
-                {
-                    Plugin.Logger.Log(missingMcmMessage);
-                    return false;
-                }
+        //    try
+        //    {
+        //        bool mcmAvailable = AppDomain.CurrentDomain.GetAssemblies()
+        //            .FirstOrDefault(a => a.GetName().Name == "MCM") != null;
 
-                Configure();
-                return true;
-            }
-            catch (FileNotFoundException)
-            {
-                Plugin.Logger.Log(missingMcmMessage);
-            }
-            catch (Exception ex)
-            {
-                Plugin.Logger.LogError(ex, "An error occurred when configuring MCM");
-            }
+        //        if (!mcmAvailable)
+        //        {
+        //            Plugin.Logger.Log(missingMcmMessage);
+        //            return false;
+        //        }
 
-            return false;
-        }
+        //        Configure();
+        //        return true;
+        //    }
+        //    catch (FileNotFoundException)
+        //    {
+        //        Plugin.Logger.Log(missingMcmMessage);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Plugin.Logger.LogError(ex, "An error occurred when configuring MCM");
+        //    }
+
+        //    return false;
+        //}
 
 
         /// <summary>
