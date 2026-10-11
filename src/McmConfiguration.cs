@@ -36,7 +36,7 @@ namespace QM_ShowUpgradeResources
 
             ModConfig defaults = new ModConfig();
 
-            ModConfigMenuAPI.RegisterModConfig("QM_ShowUpgradeResources", new List<IConfigValue>()
+            ModConfigMenuAPI.RegisterModConfig("Show Needed Upgrade Resources", new List<IConfigValue>()
             {
                 //Note that MCM does support color codes, as shown below.
 

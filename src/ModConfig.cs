@@ -27,7 +27,7 @@ namespace QM_ShowUpgradeResources
         /// When enabled, adds a delta to the item info for upgrade resources. Useful when deciding to trade items 
         /// or hold onto a resource for higher priority upgrades
         /// </summary>
-        public bool ShowTotalNeededResources { get; set; } = false;
+        public bool ShowTotalNeededResources { get; set; } = true;
 
         public void Save(string configPath)
         {

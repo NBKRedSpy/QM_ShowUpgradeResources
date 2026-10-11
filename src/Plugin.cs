@@ -33,14 +33,22 @@ namespace QM_ShowUpgradeResources
 
             Config = new ModConfig(ConfigDirectories.ConfigPath).LoadConfig();
 
-            //Optionally support MCM if the user has MCM installed.  Otherwise the user must edit the config
-            //  file directly as needed.
-            McmConfiguration = new McmConfiguration(Config);
-            McmConfiguration.TryConfigure();
-
-
             State = context.State;
             new Harmony("NBKRedSpy_" + ConfigDirectories.ModAssemblyName).PatchAll();
+        }
+
+        [Hook(ModHookType.MainMenuStarted)]
+        public static void MainMenuStarted(ModContext modContext)
+        {
+            //Already inited
+            if (McmConfiguration != null) return;
+
+            //Optionally support MCM if the user has MCM installed.  Otherwise the user must edit the config
+            //  file directly as needed.
+            //Have to configure at the MainMenu to ensure the MCM is not actually required, but it still has to be loaded 
+            //  before this mod.
+            McmConfiguration = new McmConfiguration(Config);
+            McmConfiguration.TryConfigure();
         }
 
         [Hook(ModHookType.DungeonStarted)]

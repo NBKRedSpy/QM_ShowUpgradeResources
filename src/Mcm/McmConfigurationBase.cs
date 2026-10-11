@@ -60,7 +60,7 @@ namespace QM_ShowUpgradeResources.Mcm
             try
             {
                 bool mcmAvailable = AppDomain.CurrentDomain.GetAssemblies()
-                    .FirstOrDefault(a => a.GetName().Name == "ModConfigMenu") != null;
+                    .FirstOrDefault(a => a.GetName().Name == "MCM") != null;
 
                 if (!mcmAvailable)
                 {
