@@ -10,7 +10,7 @@ namespace QM_ShowUpgradeResources.Patches
 {
     /// <summary>
     /// Gets the ID of the  item's icon.  This is used by the TooltipFactory patch as the id is not available at that level.
-    /// This allows the AddPriceBlock patch to not need to be more contained and resiliant to changes.
+    /// This allows the AddPriceBlock patch to not need to be more contained and resilient to changes.
     /// </summary>
     [HarmonyPatch(typeof(TooltipItemIcon), nameof(TooltipItemIcon.Initialize))]
     internal class TooltipItemIcon_Initialize_Patch
