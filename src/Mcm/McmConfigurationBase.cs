@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using MGSC;
 using ModConfigMenu.Contracts;
 using ModConfigMenu.Implementations;
 using ModConfigMenu.Objects;
@@ -49,42 +50,33 @@ namespace QM_ShowUpgradeResources.Mcm
         /// </summary>
         private static int UniqueId = 0;
 
-        //TODO: Remove
 
-        ///// <summary>
-        ///// Attempts to configure the MCM, but logs an error and continues if it fails.
-        ///// </summary>
-        //public bool TryConfigure()
-        //{
+        /// <summary>
+        /// Attempts to configure the MCM support if MCM is available.  Returns null if MCM is not available or if an error occurs.
+        /// </summary>
+        /// <param name="state"></param>
+        /// <param name="config"></param>
+        /// <returns>Null if MCM is not available or if an error occurs.</returns>
+        public static McmConfiguration TryConfigure(State state, ModConfig config)
+        {
+            if (!state.Get<UserMods>().Values
+                .Any(x => x.UniqueModName == "Crynano_ModConfigMenu"))
+            {
+                return null;
+            }
 
-        //    const string missingMcmMessage = "MCM is not available.  MCM will not be used.";
-
-        //    try
-        //    {
-        //        bool mcmAvailable = AppDomain.CurrentDomain.GetAssemblies()
-        //            .FirstOrDefault(a => a.GetName().Name == "MCM") != null;
-
-        //        if (!mcmAvailable)
-        //        {
-        //            Plugin.Logger.Log(missingMcmMessage);
-        //            return false;
-        //        }
-
-        //        Configure();
-        //        return true;
-        //    }
-        //    catch (FileNotFoundException)
-        //    {
-        //        Plugin.Logger.Log(missingMcmMessage);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Plugin.Logger.LogError(ex, "An error occurred when configuring MCM");
-        //    }
-
-        //    return false;
-        //}
-
+            try
+            {
+                McmConfiguration mcmConfig = new McmConfiguration(config);
+                mcmConfig.Configure();
+                return mcmConfig;
+            }
+            catch (Exception ex)
+            {
+                Plugin.Logger.LogError(ex, "An error occurred when configuring MCM");
+            }
+            return null;
+        }
 
         /// <summary>
         /// The ModConfig specific configuration.  Use the Create* and OnSave helper functions.

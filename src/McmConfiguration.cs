@@ -17,6 +17,7 @@ using System.Xml;
 using UnityEngine;
 using QM_ShowUpgradeResources.Mcm;
 using QM_ShowUpgradeResources;
+using MGSC;
 
 namespace QM_ShowUpgradeResources
 {
@@ -49,6 +50,6 @@ namespace QM_ShowUpgradeResources
                     "Show Total Needed Resources"),
             }, OnSave);
         }
-         
+
     }
 }

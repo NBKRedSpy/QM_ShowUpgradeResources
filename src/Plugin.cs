@@ -45,23 +45,14 @@ namespace QM_ShowUpgradeResources
         [Hook(ModHookType.MainMenuStarted)]
         public static void MainMenuStarted(ModContext modContext)
         {
-            //TODO:  Move this to try configure since we are searching now.
 
-            //Note - this is a workaround as the game does not support an "optional dependency".  
-            //  The alternative is to make sure the MCM is configured before the main menu is started,
-            //  which should always be after all the mods are loaded.
-            if (McmConfiguration != null ||
-                !State.Get<UserMods>().Values.Any(x => x.UniqueModName == "Crynano_ModConfigMenu"))
-            {
-                return;
-            }
+            //Note - this is a workaround as the game does not support an "optional dependency"
+            //  and we cannot guarantee that MCM will be loaded before this mod.
 
-            //Optionally support MCM if the user has MCM installed.  Otherwise the user must edit the config
-            //  file directly as needed.
-            //Have to configure at the MainMenu to ensure the MCM is not actually required, but it still has to be loaded 
-            //  before this mod.
-            McmConfiguration = new McmConfiguration(Config);
-            McmConfiguration.Configure();
+            //At worst this will be invoked on each main menu return, but won't be a big deal.
+            if (McmConfiguration != null) return;
+
+            McmConfiguration = McmConfiguration.TryConfigure(modContext.State, Config);
         }
 
         [Hook(ModHookType.DungeonStarted)]
